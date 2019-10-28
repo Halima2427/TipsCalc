@@ -1,0 +1,62 @@
+<html>
+<body>
+    <input type="text" id="h1" placeholder="Date">
+    <input type="text" id="h2" placeholder="Month">
+    <input type="text" id="h3" placeholder="Year"><br><br>
+    <button id="b1" onclick="onClick()">DayOfBirth</button>
+    <button id="b2" onclick="onClick1()">Age</button>
+    <script>
+        function onClick() {
+            var date = document.getElementById("h1").value;
+            var month = document.getElementById("h2").value;
+            var year = document.getElementById("h3").value;
+            var d = new Date(year, month - 1, date);
+            document.getElementById("demo1").innerHTML = d.getMonth();
+            var weekday = new Array(7);
+                weekday[0] = "Sunday";
+                weekday[1] = "Monday";
+                weekday[2] = "Tuesday";
+                weekday[3] = "Wednesday";
+                weekday[4] = "Thursday";
+                weekday[5] = "Friday";
+                weekday[6] = "Saturday";
+            var output = weekday[d.getDay()];
+            var month = new Array(12);
+                month[0] = "January";
+                month[1] = "February";
+                month[2] = "March";
+                month[3] = "April";
+                month[4] = "May";
+                month[5] = "June";
+                month[6] = "July";
+                month[7] = "August";
+                month[8] = "September";
+                month[9] = "October";
+                month[10] = "November";
+                month[11] = "December";
+            var outmonth=month[d.getUTCMonth()];
+            
+
+
+            document.getElementById("demo").innerHTML = "<h3>Day of Birth:"+output+"</h3>";
+            document.getElementById("demo1").innerHTML= "<h3>Month of Birth:"+outmonth+"</h3>";
+        }
+        function onClick1()
+        {
+            var birthyear=document.getElementById("h3").value
+            var currentyear=new Date();
+            console.log(currentyear);
+            var d1=currentyear.getFullYear();
+            console.log(d1);
+            age=d1-birthyear;
+            console.log(age);
+            document.getElementById("demo2").innerHTML="<h3>Current Age:"+age +"</h3>";
+
+        }
+        
+    </script>
+    <span id="demo"><h3></h3></span>
+    <span id="demo1"><h3></h3></span>
+    <span id="demo2"><h3></h3></span>
+</body>
+</html>

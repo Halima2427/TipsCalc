@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>TIPS-CALCULATOR</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </link>
+</head>
+
+<body style="background-color: rgb(95, 88, 88);">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="row">
+            <div class="col-xl-4"></div>
+            <div class="col-xl-4">
+                <div class="alert alert-dark" role="alert">TIPS CALCULATOR</div>
+                <form onsubmit="calculate();return false;">
+                    <label>How much was your bill?</label><br>
+                    $<input type="text" placeholder="enter the rate" id="rate"><br>
+                    <label>How was our service?</label><br>
+                    <select>
+                        <option>...</option>
+                        <option>GOOD</option>
+                        <option>SATISFIED</option>
+                        <option>BAD</option>
+                    </select><br>
+                    <label>How many people share the bill?</label><br>
+                    <input type="text" placeholder="number" id="people"><br><br>
+                    <button>CALCULATE</button>
+                    
+                </form>
+                <span id="span"></span>
+            </div>
+            <div class="col-xl-4"></div>
+        </div>
+    </div>
+    <script>
+        function calculate()
+        {
+            var rate=document.getElementById("rate").value;
+            var n=document.getElementById("people").value;
+            cal=rate/n;
+            document.getElementById("span").innerHTML=cal;
+        }
+    </script>
+</body>
+
+</html> 
